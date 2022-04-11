@@ -1,0 +1,50 @@
+[squid_servers]
+squid-server-01 ansible_host=10.85.5.250
+squid-server-02 ansible_host=10.85.6.51
+ 
+jenkins-primary ansible_host=10.85.1.155
+ 
+jenkins-standby ansible_host=10.85.1.202
+ 
+jenkins-slave-int-01 ansible_host=10.85.1.190
+jenkins-slave-int-02 ansible_host=10.85.1.236
+
+jenkins-slave-dmz-01 ansible_host=10.85.0.92
+ 
+[jenkins_primary]
+jenkins-primary
+ 
+[jenkins_standby]
+jenkins-standby
+ 
+[jenkins_masters]
+jenkins-primary
+jenkins-standby
+ 
+[jenkins_jobs]
+jenkins-primary
+ 
+[jenkins_slave]
+jenkins-slave-int-01
+jenkins-slave-int-02
+jenkins-slave-dmz-01
+
+ 
+[jenkins_masters:vars]
+jenkins_masters=true
+efs_file_system_id=fs-a9d225d2
+ 
+[jenkins_primary:vars]
+jenkins_primary=true
+ 
+[jenkins_standby:vars]
+jenkins_standby=true
+ 
+[jenkins_slave:vars]
+jenkins_slave=true
+ 
+[jenkins_jobs:vars]
+jenkins_jobs=true
+ 
+[all:vars]
+ansible_ssh_private_key_file = /home/ec2-user/rhel_som.pem
