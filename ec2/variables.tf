@@ -45,7 +45,7 @@ variable "key_name" {
 }
 
 variable "name" {
-  description = "name of the vpc"
+  description = "name of the ec2"
   default     = ""
 }
 
