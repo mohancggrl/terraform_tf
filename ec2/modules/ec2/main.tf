@@ -11,7 +11,6 @@ resource "aws_instance" "dev_env" {
   tags = {
     Name            = var.name
     Env             = var.env
-    app             = var.app
   }
 
   root_block_device {

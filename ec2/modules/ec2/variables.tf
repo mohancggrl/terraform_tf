@@ -68,7 +68,3 @@ variable "delete_on_termination" {
   description = "delete on termination"
   default     = "true"
 }
-variable "app" {
-  description = "app name"
-  default     = ""
-}
